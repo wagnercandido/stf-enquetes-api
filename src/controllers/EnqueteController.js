@@ -1,7 +1,11 @@
 const Enquete = require('../models/Enquete');
-const Comentario = require('../models/Comentario');
 
 class EnqueteController {
+    async getEnquetes(req, res) {
+        const enquetes = await Enquete.find().sort('-createdAt');
+        return res.json(enquetes);
+    };
+
     async store(req, res) {
         const { author, title } = req.body;
         const enquete = await Enquete.create({ author, title });
