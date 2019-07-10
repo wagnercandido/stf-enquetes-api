@@ -23,11 +23,12 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0-ky2dx.mongodb.net/enquetes?
 
 app.use((req, res, next) => {
     req.io = io;
-    return next();
+    next();
 });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.use(require('./routes'));
 

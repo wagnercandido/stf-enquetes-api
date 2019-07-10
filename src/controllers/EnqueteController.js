@@ -9,7 +9,7 @@ class EnqueteController {
     async store(req, res) {
         const { author, title } = req.body;
         const enquete = await Enquete.create({ author, title });
-        
+        req.io.emit('enquete', enquete);
         return res.json(enquete);
     };
 

@@ -8,8 +8,8 @@ class LikeController {
 
         await sugestao.save();
 
-        req.io.emit('sugestao', sugestao);
-
+        const likeSocket = req.io.emit('like', sugestao);
+        
         return res.json(sugestao);
     }
 

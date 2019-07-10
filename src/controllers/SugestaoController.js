@@ -13,12 +13,7 @@ class SugestaoController {
 
         await enquete.save();
 
-        console.log('no socket');
-        
-
-        // req.io.sockets.in(enquete._id).emit('sugestao', sugestao);
-
-        req.io.emit('sugestao', sugestao);
+        req.io.emit('sugestao', {sugestao, enquete});
 
         return res.json(sugestao);
     };
