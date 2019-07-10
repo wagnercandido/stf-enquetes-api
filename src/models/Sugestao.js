@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Comentario = new mongoose.Schema(
+const Sugestao = new mongoose.Schema(
     {
         author: {
             type: String,
@@ -21,4 +21,4 @@ const Comentario = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('Comentario', Comentario);
+module.exports = mongoose.model('Sugestao', Sugestao);

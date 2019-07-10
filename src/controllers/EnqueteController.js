@@ -15,7 +15,7 @@ class EnqueteController {
 
     async show(req, res) {
         const enquete = await Enquete.findById(req.params.id).populate({
-            path: "comments",
+            path: "sugestoes",
             options: { sort: { createdAt: -1 } }
         });
 

@@ -9,11 +9,11 @@ app.use(cors());
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-io.on('connection', socket => {
-    socket.on('connectActive', enquete => {
-        socket.join(enquete);
-    })
-});
+// io.on('connection', socket => {
+//     socket.on('connectActive', enquete => {
+//         socket.join(enquete);
+//     })
+// });
 
 mongoose.connect('mongodb+srv://admin:admin@cluster0-ky2dx.mongodb.net/enquetes?retryWrites=true&w=majority',
     {

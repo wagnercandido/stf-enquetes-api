@@ -10,7 +10,7 @@ const Enquete = new mongoose.Schema(
             type: String,
             required: true,
         },
-        comments: [{type: mongoose.Schema.Types.ObjectId, ref: "Comentario"}]
+        sugestoes: [{type: mongoose.Schema.Types.ObjectId, ref: "Sugestao"}]
     }, {
         timestamps: true
     }
