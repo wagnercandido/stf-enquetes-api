@@ -18,7 +18,7 @@ class UsuarioController {
             }
             if (data) {
                 if (password === data.password) {
-                    return res.json({ status: 200, response: 'success', user: data.name });
+                    return res.json({ status: 200, response: 'success', user: data.name, _id: data._id });
                 }
                 return res.json({ status: 401, response: 'Unauthorized' });
             }

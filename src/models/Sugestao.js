@@ -13,7 +13,8 @@ const Sugestao = new mongoose.Schema(
         likes: {
             type: Number,
             default: 0
-        }
+        },
+        votos: [{idUser:String}]
     }, {
         timestamps: true,
         toObject: { virtuals: true },
