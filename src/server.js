@@ -9,7 +9,7 @@ app.use(cors());
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0-ky2dx.mongodb.net/enquetes?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://admin:admin@cluster0-ky2dx.mongodb.net/enquetes-copy?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
     }

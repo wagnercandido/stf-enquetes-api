@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Enquete = new mongoose.Schema(
+const EnqueteSchema = new mongoose.Schema(
     {
         author: {
             type: String,
@@ -10,10 +10,10 @@ const Enquete = new mongoose.Schema(
             type: String,
             required: true,
         },
-        sugestoes: [{type: mongoose.Schema.Types.ObjectId, ref: "Sugestao"}]
+        idEvento: {type: mongoose.Schema.Types.ObjectId, ref: "Evento"},
     }, {
         timestamps: true
     }
 );
 
-module.exports = mongoose.model('Enquete', Enquete);
+module.exports = mongoose.model('Enquete', EnqueteSchema);

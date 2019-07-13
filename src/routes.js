@@ -4,15 +4,24 @@ const routes = express.Router();
 
 const EnqueteConstroller = require('./controllers/EnqueteController');
 const SugestaoControler = require('./controllers/SugestaoController');
-const LikeController = require('./controllers/LikeController');
 const UsuarioController = require('./controllers/UsuarioController');
+const EventoController = require('./controllers/EventoController');
+const OperacaoController = require('./controllers/OperacaoController');
 
+routes.post('/login', UsuarioController.getUser);
+routes.post('/users', UsuarioController.store);
+
+routes.get( '/operacoes', OperacaoController.get);
+routes.post('/operacoes', OperacaoController.store);
+
+routes.get( '/eventos', EventoController.get);
+routes.post('/eventos', EventoController.store);
+
+routes.get( '/enquetes/evento/:id', EnqueteConstroller.getByidEvento);
 routes.post('/enquetes', EnqueteConstroller.store);
-routes.get('/enquetes', EnqueteConstroller.getEnquetes);
-routes.get('/enquetes/:id', EnqueteConstroller.show);
 
-routes.post('/enquetes/:id/sugestoes', SugestaoControler.store);
-routes.post('/sugestoes/:id/like', LikeController.store);
-routes.post('/users', UsuarioController.getUser);
+routes.get('/sugestoes/enquete/:id', SugestaoControler.getByIdEnquete);
+routes.post('/sugestoes', SugestaoControler.store);
+routes.post('/sugestoes/votar', SugestaoControler.votar);
 
 module.exports = routes;

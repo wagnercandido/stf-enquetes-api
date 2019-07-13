@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Sugestao = new mongoose.Schema(
+const SugestaoSchema = new mongoose.Schema(
     {
         author: {
             type: String,
@@ -10,10 +10,7 @@ const Sugestao = new mongoose.Schema(
             type: String,
             required: true,
         },
-        likes: {
-            type: Number,
-            default: 0
-        },
+        idEnquete: { type: mongoose.Schema.Types.ObjectId, ref: "Enquete" },
         votos: [{idUser:String}]
     }, {
         timestamps: true,
@@ -22,4 +19,4 @@ const Sugestao = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('Sugestao', Sugestao);
+module.exports = mongoose.model('Sugestao', SugestaoSchema);
