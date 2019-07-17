@@ -3,7 +3,6 @@ const EnqueteSchema = require('../models/EnqueteSchema');
 
 class SugestaoController {
 
-
     async store(req, res) {
 
         const { author, title, idEnquete } = req.body;

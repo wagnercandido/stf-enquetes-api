@@ -8,11 +8,12 @@ class OperacaoController {
     async store(req, res) {
         const { nome: nome } = req.body;
         const Operacao = await OperacaoSchema.create({ nome: nome });
-        return res.json(Operacao._id);
+        return res.json(Operacao);
     };
 
     async getById(req, res) {
-        return res.json(await OperacaoSchema.findById(req.params.id));
+        const response = await OperacaoSchema.findById(req.params.id);
+        return res.json(response);
     }; 
 };
 

@@ -1,8 +1,8 @@
-const Enquete = require('../models/EnqueteSchema'); 
+const Enquete = require('../models/EnqueteSchema');
 
 class EnqueteController {
-    async getByidEvento(req, res) {   
-        const idEvento = req.params.id;     
+    async getByidEvento(req, res) {
+        const idEvento = req.params.id;
         const enquetes = await Enquete.find({ idEvento: String(idEvento) }).sort('-createdAt');
         return res.json(enquetes);
     };
@@ -13,6 +13,13 @@ class EnqueteController {
         req.io.emit('enquete', enquete);
         return res.json(enquete);
     };
+
+    async getEnquete(req, res) {
+        const {idEnquete} = req.body;
+        
+        const enquete = await Enquete.findById(idEnquete);
+        return res.json(enquete);
+    }
 
 }
 
