@@ -11,17 +11,18 @@ const OperacaoController = require('./controllers/OperacaoController');
 routes.post('/login', UsuarioController.getUser);
 routes.post('/users', UsuarioController.store);
 
-routes.get( '/operacoes', OperacaoController.get);
+routes.get('/operacoes', OperacaoController.get);
 routes.post('/operacoes', OperacaoController.store);
 routes.get('/operacoes/:id', OperacaoController.getById);
 
-routes.get( '/eventos', EventoController.get);
-routes.get( '/eventos/:id', EventoController.getById);
+routes.get('/eventos', EventoController.get);
+routes.get('/eventos/:id', EventoController.getById);
 routes.post('/eventos', EventoController.store);
 
-routes.get( '/enquetes/evento/:id', EnqueteConstroller.getByidEvento);
+routes.get('/enquetes/evento/:id', EnqueteConstroller.getByidEvento);
 routes.post('/enquetes/sugestao', EnqueteConstroller.getEnquete);
 routes.post('/enquetes', EnqueteConstroller.store);
+routes.get('/enquetes', EnqueteConstroller.getEnquetes);
 
 routes.get('/sugestoes/enquete/:id', SugestaoControler.getByIdEnquete);
 routes.post('/sugestoes', SugestaoControler.store);

@@ -10,6 +10,7 @@ const EnqueteSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        sugestoes: Number,
         idEvento: {type: mongoose.Schema.Types.ObjectId, ref: "Evento"},
     }, {
         timestamps: true
