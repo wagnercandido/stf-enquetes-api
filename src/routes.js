@@ -14,6 +14,7 @@ routes.post('/users', UsuarioController.store);
 routes.get('/operacoes', OperacaoController.get);
 routes.post('/operacoes', OperacaoController.store);
 routes.get('/operacoes/:id', OperacaoController.getById);
+routes.post('/operacao', OperacaoController.getByNmae);
 
 routes.get('/eventos', EventoController.get);
 routes.get('/eventos/:id', EventoController.getById);
