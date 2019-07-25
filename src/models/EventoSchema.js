@@ -7,7 +7,6 @@ const EventoSchema = new mongoose.Schema(
         nome: { type: String, required: true },
         dtInicial: { type: Date, required: true },
         dtFinal: { type: Date, required: false },
-        isAtivo: { type: Boolean, required: true }
     }, {
         timestamps: true
     }
