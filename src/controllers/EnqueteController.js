@@ -11,7 +11,7 @@ class EnqueteController {
     //     return await Enquete.find({ idEvento: String(idEvento) }).sort('-createdAt');
     // }
 
-    getByidEvento = (req, res) => {
+    getByidEvento(req, res) {
         const idEvento = req.params.id;
         let enquetesReturn = [];
 

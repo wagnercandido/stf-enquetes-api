@@ -5,7 +5,7 @@ class OperacaoController {
         return res.json(await OperacaoSchema.distinct('nome'));
     };
 
-    store = async (req, res) => {
+    async store(req, res) {
         const { nome: nome } = req.body;
 
         const Operacao = await OperacaoSchema.create({ nome: nome });
@@ -17,7 +17,7 @@ class OperacaoController {
         return res.json(response);
     };
 
-    getByNmae = async (req, res) => {
+    async getByNmae(req, res) {
 
         const { nome } = req.body;
 
