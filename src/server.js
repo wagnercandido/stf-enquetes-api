@@ -9,7 +9,15 @@ app.use(cors());
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0-ky2dx.mongodb.net/enquetes-copy?retryWrites=true&w=majority',
+// Banco de dados - acesso Wagner Cândido
+// mongoose.connect('mongodb+srv://admin:admin@cluster0-ky2dx.mongodb.net/enquetes-copy?retryWrites=true&w=majority',
+//     {
+//         useNewUrlParser: true,
+//     }
+// );
+
+// Banco de acesso - acesso Stefanini Dev
+mongoose.connect('mongodb+srv://root:root@cluster0-lubnd.mongodb.net/pocka-enquetes?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
     }
